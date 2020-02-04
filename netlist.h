@@ -3245,6 +3245,8 @@ class NetDeassign : public NetAssignBase {
       virtual bool emit_proc(struct target_t*) const;
       virtual void dump(ostream&, unsigned ind) const;
       virtual bool check_synth(ivl_process_type_t pr_type, const NetScope*scope) const;
+      virtual bool synth_async(Design*, NetScope*, NexusSet&, NetBus&,
+			       NetBus&, vector<mask_t>&) { return false; }
 
     private: // not implemented
       NetDeassign(const NetDeassign&);
